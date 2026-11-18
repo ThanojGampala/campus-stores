@@ -38,6 +38,8 @@ body > main {
   --mark: light-dark(#bd502f, #f2a585);
   --ok: light-dark(#e3f1e8, #2d4838);
   --oktxt: light-dark(#25523d, #bedac8);
+  --warn: light-dark(#fbe3da, #4b2b22);
+  --warntxt: light-dark(#8c3215, #f5c2ae);
   background: var(--paper);
   color: var(--ink);
   font:
@@ -263,6 +265,71 @@ body > main {
   background: var(--ok);
   color: var(--oktxt);
 }
+#campus-stores .tag.warn {
+  background: var(--warn);
+  color: var(--warntxt);
+}
+#campus-stores .tag.now {
+  background: var(--memo);
+  color: var(--memotxt);
+}
+#campus-stores nav .navnote {
+  display: block;
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--memotxt);
+}
+#campus-stores nav .navnote.warn {
+  color: var(--warntxt);
+}
+#campus-stores nav button[aria-pressed="true"] .navnote {
+  color: inherit;
+}
+#campus-stores .counter {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+#campus-stores .counter input {
+  width: 100%;
+  margin-top: 3px;
+  font-weight: 400;
+}
+#campus-stores .row small.where {
+  color: var(--ink);
+}
+#campus-stores .row .actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+#campus-stores .panel {
+  grid-column: 1/-1;
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  background: var(--desk);
+  border-left: 3px solid var(--sel);
+}
+#campus-stores .panel :is(.form, .buttons) {
+  margin: 0;
+}
+#campus-stores label span.when {
+  display: flex;
+  gap: 6px;
+}
+#campus-stores .form .when input {
+  flex: 1 1 0;
+}
+#campus-stores .form .when input[type="date"] {
+  flex-grow: 1.3;
+}
+#campus-stores .hint {
+  border-top: 1px solid var(--line);
+  padding: 9px 0;
+  color: var(--quiet);
+}
 #campus-stores .record {
   margin-top: 14px;
   padding: 12px 13px;
@@ -361,6 +428,10 @@ body > main {
   }
   #campus-stores .row {
     gap: 5px;
+  }
+  #campus-stores .row .actions {
+    grid-column: 1/-1;
+    justify-content: flex-start;
   }
 }
 @media (pointer: coarse) {
